@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta charset="gb2312">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p>Hello, this is the test.<br/> Can you see me ? <span class="red"><%= bool %></span></p>
+    <h1>js代碼</h1>
+    js數組的長度：<% js.length  %>
+    <ul class="num">
+	    <% for(var i=0;i<js.length;i++){ %>
+	    <li><span class="green"><%= js[i] %></span></li>
+	    <% }%>
+    </ul>
+    <h1>html代碼</h1>
+    <p><%- head %></p>
+
+    <%=inspect(headers) %>
+  </body>
+</html>

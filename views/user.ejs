@@ -1,0 +1,10 @@
+<% include header.ejs %>
+<!-- 内容区域 -->
+<div class="container body">
+<% if (locals.user) { %>
+  <% include say.ejs %>
+<% } %>
+<% include posts.ejs %>
+</div>
+
+<% include footer.ejs %>

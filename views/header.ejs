@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/index.css">
+     <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+	<title><%= title %></title>
+</head>
+<body>
+	<!-- 导航条 -->
+	<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+		<div class="container">
+			<!-- 小屏幕时触发菜单的按钮 -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#blog-navbar-collapse">
+					<span class="sr-only">触发导航</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Blog</a>
+			</div>
+			<!-- 导航菜单 -->
+			<div class="collapse navbar-collapse" id="blog-navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="/">首页</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav pull-right">
+					<% if(!locals.user){ %>
+					<li>
+						<a href="/login">登录</a>
+					</li>
+					<li>
+						<a href="/reg">注册</a>
+					</li>
+					<% }else { %>
+					<li>
+						<a href="/u/:<%= locals.user.name %>
+							">
+							<%= locals.user.name %></a>
+					</li>
+					<li>
+						<a href="/logout">退出</a>
+					</li>
+					<% } %>
+				</ul>
+			</div>
+		</div>
+	</div>

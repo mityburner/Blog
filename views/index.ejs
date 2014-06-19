@@ -1,0 +1,23 @@
+<% include header.ejs %>
+<!-- 内容区域 -->
+<div class="container body">
+<% if(!locals.user){ %>
+ <!-- 大屏幕 -->
+  <div class="jumbotron">
+    <h1>欢迎来到Zodiac世界</h1>
+    <p class="lead">
+      blog是一个基于nodejs创建的博客系统。用到了bootstrap前端框架，mongodb数据库。欢迎使用本系统，并向我们提供你的宝贵意见。我们等待你的回应！！
+    </p>
+    <p>
+      <a href="/login" class="btn btn-primary btn-lg" role="button">登录</a>
+      <a href="/reg" class="btn btn-lg" role="button">注册</a>
+    </p>
+  </div>
+<% }else{ %>
+ <% include say.ejs %>
+  <% } %>
+  <!-- 博客信息 -->
+  <% include posts.ejs %>
+ 
+</div>
+<% include footer.ejs %>

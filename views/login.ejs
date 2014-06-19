@@ -1,0 +1,27 @@
+<% include header.ejs %>
+<!-- 登录区域 -->
+<div class="container body">
+	<% if(locals.success){ %>
+	<div class="alert alert-success"><%= success %></div>
+	<% }else if(locals.error){ %>
+	<div class="alert alert-danger"><%= error %></div>
+	<% } %>
+	<div class="row">
+	<h3 class="page-header">
+			<%= title %></h3>
+		<div class="col-md-4 col-md-offset-4">
+			<form action="/doLogin" role="form" method="post">
+				<div class="form-group">
+					<label class="sr-only" for="username">用户名：</label>
+					<input type="text" class="form-control" id="username" name="username"  placeholder="输入用户名"></div>
+				<div class="form-group">
+					<label class="sr-only" for="password">密码：</label>
+					<input type="password" class="form-control" id="password" name="password"  placeholder="输入密码"></div>
+				<div class="form-group">
+					<button class="btn btn-success btn-block" type="submit">登录</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<% include footer.ejs %>

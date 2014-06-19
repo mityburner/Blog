@@ -1,0 +1,18 @@
+.body {
+	margin-top: 71px;
+}
+.fix {
+	margin-bottom: 0;
+}
+.well {
+	overflow: hidden;
+}
+.center {
+	text-align: center;
+}
+/* Smaller screens ----------- */
+	@media (max-width : 480px) {
+		.xs-v {
+			margin-top: 1em;
+		}
+	}
